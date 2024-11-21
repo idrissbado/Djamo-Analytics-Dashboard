@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Djamo Analytics Dashboard - Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Djamo Analytics Dashboard - Results</h1>
+
+        <!-- Fraud Detection Results -->
+        <h3>Fraud Detection</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Agent ID</th>
+                    <th scope="col">Commission</th>
+                    <th scope="col">Transaction Count</th>
+                    <th scope="col">Commission-to-Deposit Ratio</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in fraud_data %}
+                <tr>
+                    <td>{{ entry['agent_id'] }}</td>
+                    <td>{{ entry['commission'] }}</td>
+                    <td>{{ entry['transaction_id'] }}</td>
+                    <td>{{ entry['commission_to_deposit_ratio'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Churn Analysis Results -->
+        <h3>Churn Analysis</h3>
+        <div>
+            <pre>{{ churn_data }}</pre>
+        </div>
+
+        <!-- Product Usage Trends -->
+        <h3>Product Usage Trends</h3>
+        <div>
+            <pre>{{ usage_data }}</pre>
+        </div>
+
+        <hr>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Go Back</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
