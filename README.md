@@ -23,6 +23,13 @@ This web-based application provides insights into:
 1. Navigate to `http://localhost:5000`.
 2. Enter your database credentials and table name.
 3. View the results on the dashboard.
+# Explanation
+connect_to_db: Establishes the connection to the MySQL database using the credentials provided by the user.
+extract_data_from_table: Fetches data from the specified table in the database.
+detect_fraud: Identifies potential fraud by calculating the commission-to-deposit ratio. It returns rows where the ratio exceeds a defined threshold (in this case, 5).
+detect_churn: Flags users who are considered to have churned. This is determined by checking if their last activity date is more than 30 days after their sign-up date.
+analyze_usage_trends: Analyzes usage patterns, like the most commonly used features, by aggregating data on feature usage.
+
 
 ## Future Work
 - Add authentication for security.
